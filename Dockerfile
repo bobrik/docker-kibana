@@ -11,6 +11,11 @@ RUN apk --update add curl && \
     ln -sf /usr/bin/node /opt/kibana-${KIBANA_VERSION}/node/bin/node && \
     apk del curl
 
+ADD ./no-highlight.patch /tmp/no-highlight.patch
+
+RUN cd /opt/kibana-${KIBANA_VERSION} && \
+    patch -p1 < /tmp/no-highlight.patch
+
 ADD ./run.sh /run.sh
 
 EXPOSE 5601
