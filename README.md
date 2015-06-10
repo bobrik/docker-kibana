@@ -1,7 +1,7 @@
 # kibana 4 in docker
 
-This is [kibana 4](https://github.com/elastic/kibana) in a minimal 60mb
-docker image. Images are tagged by kibana versions.
+This is [kibana 4](https://github.com/elastic/kibana) in a minimal
+docker image under 50mb. Images are tagged by kibana versions.
 
 ## Running
 
