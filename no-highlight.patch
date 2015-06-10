@@ -1,15 +1,17 @@
 --- kibana-4.0.1-linux-x64/src/public/index.js
 +++ kibana-4.0.1-linux-x64_huh/src/public/index.js
-@@ -118965,9 +118965,9 @@
+@@ -122937,10 +122937,10 @@
        .sort(getSort($state.sort, $scope.indexPattern))
        .query(!$state.query ? null : $state.query)
        .highlight({
 -        pre_tags: [highlightTags.pre],
 -        post_tags: [highlightTags.post],
--        fields: {'*': {}}
-+        //pre_tags: [highlightTags.pre],
-+        //post_tags: [highlightTags.post],
-+        //fields: {'*': {}}
+-        fields: {'*': {}},
+-        fragment_size: 2147483647 // Limit of an integer.
++//        pre_tags: [highlightTags.pre],
++//        post_tags: [highlightTags.post],
++//        fields: {'*': {}},
++//        fragment_size: 2147483647 // Limit of an integer.
        })
        .set('filter', $state.filters || []);
      });
