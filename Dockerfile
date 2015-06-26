@@ -2,7 +2,7 @@ FROM alpine:3.2
 
 ENV KIBANA_VERSION 4.1.0-linux-x64
 
-RUN apk --update add curl && \
+RUN apk --update add curl bash && \
     mkdir /opt && \
     curl -s https://download.elasticsearch.org/kibana/kibana/kibana-${KIBANA_VERSION}.tar.gz | tar zx -C /opt && \
     apk add nodejs && \
@@ -15,4 +15,4 @@ ADD ./run.sh /run.sh
 
 EXPOSE 5601
 
-ENTRYPOINT /run.sh
+ENTRYPOINT ["/run.sh"]
