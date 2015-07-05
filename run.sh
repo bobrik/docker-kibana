@@ -18,7 +18,7 @@ unset HOST
 unset PORT
 
 # Run kibana if no command specified
-if [ "${1:0:1}" = '-' ]; then
+if [ "${1}" = '' ]; then
     exec /opt/kibana-${KIBANA_VERSION}/bin/kibana
 fi
 
