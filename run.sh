@@ -17,4 +17,12 @@ fi
 unset HOST
 unset PORT
 
-exec /opt/kibana-${KIBANA_VERSION}/bin/kibana
+# Run kibana if no command specified
+if [ "${1}" = '' ]; then
+    exec /opt/kibana-${KIBANA_VERSION}/bin/kibana
+fi
+
+# As argument is not related to kibana,
+# then assume that user wants to run his own process,
+# for example a `bash` shell to explore this image
+exec "$@"
